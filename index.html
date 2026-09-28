@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Svayatta Forge · Sovereign AI tools</title>
+<meta name="description" content="Sovereign AI tools you run yourself, read in full, and verify without trusting anyone else's servers. Open source under Apache 2.0, built by Charioteer Consulting Ltd.">
+<meta property="og:title" content="Svayatta Forge">
+<meta property="og:description" content="Sovereign AI tools, open source under Apache 2.0. Built by Charioteer Consulting Ltd.">
+<meta property="og:image" content="https://svayattaforge.com/og.png">
+<meta property="og:url" content="https://svayattaforge.com/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f6f3ee; --bg2: #ede8e0; --card: #fbf9f6; --ink: #141417; --ink2: #55524c; --ink3: #8a857c;
+  --line: #ddd6cb; --ember: #e8622c; --ember-ink: #b84416; --mark: #141417;
+  --sans: Inter, ui-sans-serif, system-ui, sans-serif; --display: "Space Grotesk", var(--sans);
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #121316; --bg2: #18191d; --card: #1a1b20; --ink: #f2eee7; --ink2: #aba69d; --ink3: #7c776f;
+  --line: #2b2c32; --ember-ink: #f0834f; --mark: #f2eee7; } }
+:root[data-theme="dark"] { --bg: #121316; --bg2: #18191d; --card: #1a1b20; --ink: #f2eee7; --ink2: #aba69d; --ink3: #7c776f;
+  --line: #2b2c32; --ember-ink: #f0834f; --mark: #f2eee7; }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 17px/1.6 var(--sans); }
+a { color: inherit; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+header.bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 0; }
+.brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; white-space: nowrap; font: 600 20px var(--display); letter-spacing: -.01em; }
+.brand svg { width: 42px; height: auto; display: block; }
+nav { display: flex; align-items: center; gap: 22px; font-size: 15px; }
+nav a { text-decoration: none; color: var(--ink2); } nav a:hover { color: var(--ink); }
+.theme { font: inherit; font-size: 13px; color: var(--ink2); background: transparent; border: 1px solid var(--line); border-radius: 6px; padding: 3px 10px; cursor: pointer; }
+
+.hero { display: grid; grid-template-columns: 1.15fr .85fr; gap: 48px; align-items: center; padding: 72px 0 88px; }
+.kicker { font: 500 14px var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--ember-ink); margin: 0 0 18px; }
+.kicker span { font-family: var(--sans); letter-spacing: 0; text-transform: none; font-size: 16px; }
+h1 { font: 700 clamp(40px, 6vw, 68px)/1.04 var(--display); letter-spacing: -.035em; margin: 0 0 22px; text-wrap: balance; }
+h1 em { font-style: normal; color: var(--ember-ink); }
+.lede { font-size: 19px; color: var(--ink2); margin: 0 0 32px; max-width: 34em; }
+.cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn { display: inline-block; padding: 12px 20px; border-radius: 8px; font-weight: 600; font-size: 15px; text-decoration: none; border: 1px solid var(--line); }
+.btn.primary { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.btn:hover { filter: brightness(1.08); }
+.anvil { width: 100%; height: auto; display: block; }
+.anvil .body { fill: var(--mark); }
+.anvil .seam { fill: var(--ember); animation: glow 5s ease-in-out infinite; }
+@keyframes glow { 0%, 100% { opacity: 1; } 50% { opacity: .55; } }
+@media (prefers-reduced-motion: reduce) { .anvil .seam { animation: none; } }
+
+section { padding: 72px 0; border-top: 1px solid var(--line); }
+h2 { font: 600 34px/1.15 var(--display); letter-spacing: -.02em; margin: 0 0 12px; }
+.sub { color: var(--ink2); margin: 0 0 40px; max-width: 42em; }
+
+.principles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.principles h3 { font: 600 20px var(--display); margin: 0 0 8px; }
+.principles h3::before { content: ""; display: block; width: 28px; height: 4px; background: var(--ember); margin-bottom: 16px; }
+.principles p { margin: 0; color: var(--ink2); font-size: 16px; }
+
+.tools { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.tool { display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 26px 26px 22px; }
+.tool .name { font: 700 26px var(--display); letter-spacing: -.02em; margin: 0 0 4px; }
+.tool .tag { font-size: 16px; font-weight: 500; margin: 0 0 14px; }
+.tool .desc { color: var(--ink2); font-size: 15.5px; margin: 0 0 18px; flex: 1; }
+.tool .stack { font-size: 13px; color: var(--ink3); margin: 0 0 14px; letter-spacing: .02em; }
+.status { display: inline-flex; align-items: flex-start; gap: 8px; font-size: 13.5px; color: var(--ink2); margin: 0 0 18px; line-height: 1.45; }
+.status i { flex: none; width: 8px; height: 8px; border-radius: 50%; margin-top: 6px; background: var(--ink3); }
+.status.live i { background: #2f9e6a; } .status.work i { background: var(--ember); } .status.early i { background: #c9a227; }
+.links { display: flex; gap: 16px; flex-wrap: wrap; padding-top: 16px; border-top: 1px solid var(--line); font-size: 14.5px; font-weight: 600; }
+.links a { text-decoration: none; color: var(--ember-ink); } .links a:hover { text-decoration: underline; }
+.links .soon { color: var(--ink3); font-weight: 500; }
+
+.name-note { display: grid; grid-template-columns: auto 1fr; gap: 36px; align-items: center; }
+.deva { font: 600 64px/1 var(--sans); color: var(--ember-ink); }
+.name-note p { margin: 0; color: var(--ink2); max-width: 40em; }
+.name-note b { color: var(--ink); font-weight: 600; }
+
+footer { border-top: 1px solid var(--line); padding: 36px 0 48px; color: var(--ink3); font-size: 14px; }
+footer .row { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+footer a { color: var(--ink2); }
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; padding: 40px 0 64px; gap: 36px; }
+  .hero .art { max-width: 420px; order: -1; }
+  .tools, .principles { grid-template-columns: 1fr; }
+  .name-note { grid-template-columns: 1fr; gap: 16px; }
+  nav a.hide-sm { display: none; }
+  nav { gap: 14px; } .brand { font-size: 18px; gap: 9px; } .brand svg { width: 34px; }
+}
+</style>
+<script>try{const t=localStorage.getItem("svayatta-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<div class="wrap">
+  <header class="bar">
+    <a class="brand" href="/" aria-label="Svayatta Forge home">
+      <svg viewBox="0 0 824 411" aria-hidden="true"><path class="body" fill="currentColor" d="M0 18 H450 V132 Q450 150 432 150 H277 C160 150 62 95 0 18 Z M466 0 H824 V151 H484 Q466 151 466 133 Z M285 167 H432 Q450 167 450 185 V318 H285 L317 290 A69 69 0 0 0 317 195 Z M631 167 H484 Q466 167 466 185 V318 H631 L599 290 A69 69 0 0 1 599 195 Z M225 335 H691 V411 H225 Z"/></svg>Svayatta Forge</a>
+    <nav aria-label="Site">
+      <a href="#tools">Tools</a><a class="hide-sm" href="#principles">Principles</a><a href="https://github.com/svayatta">GitHub</a>
+      <button class="theme" type="button" id="theme">Theme</button>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div>
+        <p class="kicker">Sovereign AI tools</p>
+        <h1>Tools you run, read, and <em>verify</em> yourself.</h1>
+        <p class="lede">Svayatta Forge builds open-source AI infrastructure that doesn't ask you to trust anyone else's servers. Every tool is Apache 2.0 and built by Charioteer Consulting Ltd.</p>
+        <div class="cta"><a class="btn primary" href="#tools">See the tools</a><a class="btn" href="https://github.com/svayatta">GitHub</a></div>
+      </div>
+      <div class="art"><svg class="anvil" viewBox="-20 -20 864 451" role="img" aria-label="The Svayatta Forge anvil"><path class="seam" d="M450 150 H466 V335 H450 Z M300 150 H616 V167 H300 Z M300 318 H616 V335 H300 Z"/><path class="body" d="M0 18 H450 V132 Q450 150 432 150 H277 C160 150 62 95 0 18 Z M466 0 H824 V151 H484 Q466 151 466 133 Z M285 167 H432 Q450 167 450 185 V318 H285 L317 290 A69 69 0 0 0 317 195 Z M631 167 H484 Q466 167 466 185 V318 H631 L599 290 A69 69 0 0 1 599 195 Z M225 335 H691 V411 H225 Z"/></svg></div>
+    </div>
+
+    <section id="principles">
+      <h2>What sovereign means here</h2>
+      <p class="sub">Three rules every tool in the forge is held to.</p>
+      <div class="principles">
+        <div><h3>You run it</h3><p>Self-hosted by default. Where there is a hosted option, it's a convenience, never a requirement.</p></div>
+        <div><h3>You can read it</h3><p>The full source is public under Apache 2.0, a licence that lets you use, modify, and ship it commercially.</p></div>
+        <div><h3>You can check it</h3><p>Where a tool makes a claim, it comes with a way to verify the claim that doesn't depend on us.</p></div>
+      </div>
+    </section>
+
+    <section id="tools">
+      <h2>The tools</h2>
+      <p class="sub">Each one is at a different stage, and each says so.</p>
+      <div class="tools">
+        <article class="tool">
+          <h3 class="name">agent-custody</h3>
+          <p class="tag">Proof of what your AI agents did.</p>
+          <p class="desc">A gateway between an agent and its tools. Every call is checked against a grant a person signed and a Cedar policy, then forwarded or denied, and a signed receipt is issued either way. Receipts go into a tamper-evident Merkle log, and anyone with the public keys can verify them in the browser.</p>
+          <p class="stack">TypeScript · Python · MCP · REST</p>
+          <p class="status live"><i></i>Released on npm and PyPI, with a hosted log.</p>
+          <div class="links"><a href="https://agent-custody.dev">agent-custody.dev →</a><a href="https://github.com/svayatta/agent-custody">Source</a></div>
+        </article>
+        <article class="tool">
+          <h3 class="name">loom</h3>
+          <p class="tag">Large MoE models on ordinary machines.</p>
+          <p class="desc">Runs Mixture-of-Experts models such as GLM, DeepSeek, Qwen, and Kimi across a group of machines. Compute stays local; what moves is weights: content-addressed byte ranges of a GGUF file, found through gossip and verified against a Merkle manifest before use. One static binary with an OpenAI-compatible API.</p>
+          <p class="stack">Zig · GGUF · Metal · Vulkan · P2P</p>
+          <p class="status work"><i></i>Distributed weight sharing works across real machines. Untrusted peers is a design only.</p>
+          <div class="links"><a href="https://github.com/svayatta/loom">Source →</a></div>
+        </article>
+        <article class="tool">
+          <h3 class="name">tells</h3>
+          <p class="tag">Is the other party on the call an AI?</p>
+          <p class="desc">Analyses a phone, Google Meet, or Zoom call as it streams and gives each party a score for how agent-like it is, from how it takes turns (reply latency, yielding, backchannels) and whether its voice sounds synthetic.</p>
+          <p class="stack">Python · streaming audio</p>
+          <p class="status early"><i></i>Early MVP. The score isn't calibrated yet, and every output says so.</p>
+          <div class="links"><span class="soon">Source opening soon</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="name">
+      <div class="name-note">
+        <div class="deva" lang="sa">स्वायत्त</div>
+        <p><b>Svāyatta</b> is Sanskrit for self-governed: one who depends on no other. A forge is where tools are shaped by hand on an anvil. Svayatta Forge is where we make tools that leave you independent of us.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="row">
+      <span>© <span id="yr">2026</span> Charioteer Consulting Ltd · All tools Apache 2.0</span>
+      <span><a href="mailto:partha@charioteerconsulting.com">partha@charioteerconsulting.com</a> · <a href="https://github.com/svayatta">github.com/svayatta</a></span>
+    </div>
+  </footer>
+</div>
+<script>
+document.getElementById("yr").textContent = new Date().getFullYear();
+const root = document.documentElement, btn = document.getElementById("theme");
+const isDark = () => root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+const label = () => { btn.textContent = isDark() ? "Light" : "Dark"; };
+btn.addEventListener("click", () => { root.dataset.theme = isDark() ? "light" : "dark"; try { localStorage.setItem("svayatta-theme", root.dataset.theme); } catch (e) {} label(); });
+label();
+</script>
+</body>
+</html>
