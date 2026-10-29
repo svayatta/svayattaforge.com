@@ -68,7 +68,7 @@ h2 { font: 600 34px/1.15 var(--display); letter-spacing: -.02em; margin: 0 0 12p
 .principles h3::before { content: ""; display: block; width: 28px; height: 4px; background: var(--ember); margin-bottom: 16px; }
 .principles p { margin: 0; color: var(--ink2); font-size: 16px; }
 
-.tools { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.tools { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
 .tool { display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 26px 26px 22px; }
 .tool .name { font: 700 26px var(--display); letter-spacing: -.02em; margin: 0 0 4px; }
 .tool .tag { font-size: 16px; font-weight: 500; margin: 0 0 14px; }
@@ -160,6 +160,14 @@ footer a { color: var(--ink2); }
           <p class="stack">Python · streaming audio</p>
           <p class="status early"><i></i>Early MVP. The score isn't calibrated yet, and every output says so.</p>
           <div class="links"><span class="soon">Source opening soon</span></div>
+        </article>
+        <article class="tool">
+          <h3 class="name">inai</h3>
+          <p class="tag">Agents that can find each other and prove who they are.</p>
+          <p class="desc">A coordination layer for AI agents built in different frameworks. Each agent gets a DID (did:key, no wallet or tokens needed), publishes its capabilities, and is found by capability over a libp2p peer-to-peer mesh rather than by URL. Messages can be end-to-end encrypted with DIDComm, and charging per call is optional (x402, MPP). One wrapper turns a LangGraph, Google ADK, CrewAI, OpenAI Agents or other agent into a mesh node, and an MCP bridge works in both directions. இணை (inai) is Tamil for "join".</p>
+          <p class="stack">TypeScript · Python · Rust · Zig · libp2p · DID</p>
+          <p class="status early"><i></i>Work in progress. Last release 0.3.1, March 2026; CLI on npm.</p>
+          <div class="links"><a href="https://github.com/svayatta/inai">Source →</a></div>
         </article>
       </div>
     </section>
