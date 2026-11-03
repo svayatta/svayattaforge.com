@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Svayatta Forge · Sovereign AI tools</title>
-<meta name="description" content="Sovereign AI tools you run yourself, read in full, and verify without trusting anyone else's servers. Open source under Apache 2.0, built by Charioteer Consulting Ltd.">
+<meta name="description" content="Sovereign AI tools you run yourself, read in full, and verify without trusting anyone else's servers. Source public for every tool, Apache 2.0 for most. Built by Charioteer Consulting Ltd.">
 <meta property="og:title" content="Svayatta Forge">
-<meta property="og:description" content="Sovereign AI tools, open source under Apache 2.0. Built by Charioteer Consulting Ltd.">
+<meta property="og:description" content="Sovereign AI tools with public source, Apache 2.0 for most. Built by Charioteer Consulting Ltd.">
 <meta property="og:image" content="https://svayattaforge.com/og.png">
 <meta property="og:url" content="https://svayattaforge.com/">
 <meta name="twitter:card" content="summary_large_image">
@@ -117,7 +117,7 @@ footer a { color: var(--ink2); }
       <div>
         <p class="kicker">Sovereign AI tools</p>
         <h1>Tools you run, read, and <em>verify</em> yourself.</h1>
-        <p class="lede">Svayatta Forge builds open-source AI infrastructure that doesn't ask you to trust anyone else's servers. Every tool is Apache 2.0 and built by Charioteer Consulting Ltd.</p>
+        <p class="lede">Svayatta Forge builds open-source AI infrastructure that doesn't ask you to trust anyone else's servers. The source of every tool is public, most of it under Apache 2.0, and all of it built by Charioteer Consulting Ltd.</p>
         <div class="cta"><a class="btn primary" href="#tools">See the tools</a><a class="btn" href="https://github.com/svayatta">GitHub</a></div>
       </div>
       <div class="art"><svg class="anvil" viewBox="-20 -20 864 451" role="img" aria-label="The Svayatta Forge anvil"><path class="seam" d="M450 150 H466 V335 H450 Z M300 150 H616 V167 H300 Z M300 318 H616 V335 H300 Z"/><path class="body" d="M0 18 H450 V132 Q450 150 432 150 H277 C160 150 62 95 0 18 Z M466 0 H824 V151 H484 Q466 151 466 133 Z M285 167 H432 Q450 167 450 185 V318 H285 L317 290 A69 69 0 0 0 317 195 Z M631 167 H484 Q466 167 466 185 V318 H631 L599 290 A69 69 0 0 1 599 195 Z M225 335 H691 V411 H225 Z"/></svg></div>
@@ -128,7 +128,7 @@ footer a { color: var(--ink2); }
       <p class="sub">Three rules every tool in the forge is held to.</p>
       <div class="principles">
         <div><h3>You run it</h3><p>Self-hosted by default. Where there is a hosted option, it's a convenience, never a requirement.</p></div>
-        <div><h3>You can read it</h3><p>The full source is public under Apache 2.0, a licence that lets you use, modify, and ship it commercially.</p></div>
+        <div><h3>You can read it</h3><p>The full source is public. Most tools are Apache 2.0, which lets you use, modify, and ship them commercially. Where a tool has a different licence, its card says so.</p></div>
         <div><h3>You can check it</h3><p>Where a tool makes a claim, it comes with a way to verify the claim that doesn't depend on us.</p></div>
       </div>
     </section>
@@ -171,10 +171,10 @@ footer a { color: var(--ink2); }
         </article>
         <article class="tool">
           <h3 class="name">indic-voice-clone</h3>
-          <p class="tag">One speaker's voice, accent included, from old recordings.</p>
-          <p class="desc">Turns a few archival recordings of one Indic-language speaker into a voice clone that keeps their regional accent. The recordings are cleaned, cut into chunks, transcribed verbatim in the dialect, and filtered to the target speaker, then they LoRA-fine-tune the open Svara-TTS voice model. Runs on a 16 GB Apple-silicon laptop. Scores voice similarity and intelligibility against the speaker's own clips, with a blind listening page for native speakers, and a local web studio for the whole flow.</p>
+          <p class="tag">Clone your voice, accent included.</p>
+          <p class="desc">Clones a voice, your own or that of someone who has consented, from a few recordings, and it works well on Indic languages, regional accent included. A short sample gives an instant clone in a local web studio; longer recordings are cleaned, chunked, transcribed verbatim in the dialect, filtered to the one speaker, and used to LoRA-fine-tune the open Svara-TTS model, which covers 19 Indic languages. Runs on a 16 GB Apple-silicon laptop and scores each clone against the speaker's own clips, with a blind listening page for native speakers.</p>
           <p class="stack">Python · PyTorch · LoRA · Svara-TTS · Docker</p>
-          <p class="status work"><i></i>Works end to end on one speaker, northern Kannada. Other scripts are wired in but untested.</p>
+          <p class="status work"><i></i>Works end to end; tested in depth on northern Kannada. Licence: PolyForm Noncommercial 1.0.0, free for personal, research, and educational use; commercial use by separate licence.</p>
           <div class="links"><span class="soon">Source opening soon</span></div>
         </article>
       </div>
@@ -190,7 +190,7 @@ footer a { color: var(--ink2); }
 
   <footer>
     <div class="row">
-      <span>© <span id="yr">2026</span> Charioteer Consulting Ltd · All tools Apache 2.0</span>
+      <span>© <span id="yr">2026</span> Charioteer Consulting Ltd · Apache 2.0 unless a tool says otherwise</span>
       <span><a href="mailto:partha@charioteerconsulting.com">partha@charioteerconsulting.com</a> · <a href="https://github.com/svayatta">github.com/svayatta</a></span>
     </div>
   </footer>
