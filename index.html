@@ -169,6 +169,14 @@ footer a { color: var(--ink2); }
           <p class="status early"><i></i>Work in progress. Last release 0.3.1, March 2026; CLI on npm.</p>
           <div class="links"><a href="https://github.com/svayatta/inai">Source →</a></div>
         </article>
+        <article class="tool">
+          <h3 class="name">indic-voice-clone</h3>
+          <p class="tag">One speaker's voice, accent included, from old recordings.</p>
+          <p class="desc">Turns a few archival recordings of one Indic-language speaker into a voice clone that keeps their regional accent. The recordings are cleaned, cut into chunks, transcribed verbatim in the dialect, and filtered to the target speaker, then they LoRA-fine-tune the open Svara-TTS voice model. Runs on a 16 GB Apple-silicon laptop. Scores voice similarity and intelligibility against the speaker's own clips, with a blind listening page for native speakers, and a local web studio for the whole flow.</p>
+          <p class="stack">Python · PyTorch · LoRA · Svara-TTS · Docker</p>
+          <p class="status work"><i></i>Works end to end on one speaker, northern Kannada. Other scripts are wired in but untested.</p>
+          <div class="links"><span class="soon">Source opening soon</span></div>
+        </article>
       </div>
     </section>
 
